@@ -1,6 +1,6 @@
 <?php get_header(); ?> 
 
-<h1>front-pafe.ph</h1>
+<h1>front-pafe2.php</h1>
 
 
 
