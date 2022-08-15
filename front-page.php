@@ -1,39 +1,23 @@
-<?php get_header(); ?> 
+<?php get_header(); ?>
+<section class="site__main">
+    <!-- <h1>front-page.php</h1> -->
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post(); ?>
+            <h2><?php the_title(); ?></h2>
 
-<h1>front-pafe2.php</h1>
+            <?php $lien = "<br><a class='bouton' href='"
+                . get_permalink()
+                . "'>"
+                . substr(get_the_title(), 0, 8)
+                . "</a>";
+
+            ?>
+
+            <p><?= wp_trim_words(get_the_content(), 0, $lien) ?></p>
 
 
-
-<section class='section_cours'>
-
-<?php
-
-
-
-if (have_posts()):
-
-    while(have_posts()) : the_post(); ?>
-
-    <div class='div_cours'>
-
-        <h2><?php the_title(); ?></h2>
-
-        <p><?= wp_trim_words(get_the_content(), 20, " ... ") ?></p>
-
-<?php $lien = "<a class='button' href='" . get_permalink() . "'>". substr(get_the_title(),0,8). "</a>";
-
-echo $lien;?>
-
-    </div>
-
-    <?php endwhile; ?>
-
-<?php endif; ?>
-
+        <?php endwhile; ?>
+    <?php endif; ?>
 </section>
-
-
-
-
-
 <?php get_footer(); ?>
