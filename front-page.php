@@ -6,7 +6,7 @@
         while (have_posts()) : the_post(); ?>
             <h2><?php the_title(); ?></h2>
 
-            <?php $lien = "<br><a class='bouto' href='"
+            <?php $lien = "<br><a class='bouton' href='"
                 . get_permalink()
                 . "'>"
                 . substr(get_the_title(), 0, 8)
